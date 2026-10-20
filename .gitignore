@@ -21,3 +21,31 @@ Thumbs.db
 
 # Logs
 *.log
+
+.trivy-cache/
+careerforge-backend.tar
+
+
+# Python virtual environments and cache
+ml-service/.venv/
+__pycache__/
+*.py[cod]
+
+# MLflow local tracking database and generated artifacts
+mlflow.db
+mlflow.db-*
+mlruns/
+ml-service/mlruns/
+
+# Python test and tooling caches
+.pytest_cache/
+.mypy_cache/
+
+# Generated analysis and build files
+.scannerwork/
+**/effective-pom.xml
+*.backup
+*.bak
+
+# Python generated files
+ml-service/**/__pycache__/
