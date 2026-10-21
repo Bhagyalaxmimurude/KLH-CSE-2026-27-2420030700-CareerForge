@@ -1,5 +1,14 @@
 
 import mlflow
+
+import os
+from pathlib import Path
+
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+DEFAULT_TRACKING_URI = "sqlite:///" + (PROJECT_ROOT / "mlflow.db").as_posix()
+mlflow.set_tracking_uri(
+    os.getenv("MLFLOW_TRACKING_URI", DEFAULT_TRACKING_URI)
+)
 import mlflow.sklearn
 import pandas as pd
 
@@ -15,7 +24,7 @@ data = pd.DataFrame({
     "sql":           [8, 4, 6, 3, 8, 5, 7, 2, 9, 4, 6, 3, 9, 5, 6, 2, 8, 4, 7, 5],
     "projects":      [8, 3, 7, 4, 9, 5, 6, 2, 8, 4, 8, 3, 9, 6, 5, 1, 9, 4, 7, 5],
     "communication": [7, 5, 8, 4, 8, 6, 7, 3, 9, 5, 7, 4, 9, 6, 5, 3, 8, 4, 7, 6],
-    # Illustrative labels only—not validated real-world hiring outcomes.
+    # Illustrative labels onlyâ€”not validated real-world hiring outcomes.
     "ready":         [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0]
 })
 

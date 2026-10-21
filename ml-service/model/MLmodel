@@ -1,0 +1,38 @@
+artifact_path: file:C:/Users/Vaishnavi/OneDrive/Desktop/CareerForge/mlruns/1/models/m-3e1921d69a874a059c2807d4b9b58813/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.skops
+    predict_fn: predict
+    python_version: 3.13.7
+  sklearn:
+    code: null
+    pickled_model: model.skops
+    serialization_format: skops
+    sklearn_version: 1.9.1
+    skops_trusted_types:
+    - sklearn.tree._tree.Tree
+is_signature_from_type_hint: false
+mlflow_version: 3.17.1
+model_id: m-3e1921d69a874a059c2807d4b9b58813
+model_size_bytes: 1728078
+model_uuid: m-3e1921d69a874a059c2807d4b9b58813
+prompts: null
+run_id: 0a993f668e8d4bcc864e8b8dcc0cda44
+saved_input_example_info:
+  artifact_path: input_example.json
+  pandas_orient: split
+  serving_input_path: serving_input_example.json
+  type: dataframe
+signature:
+  inputs: '[{"type": "long", "name": "coding", "required": true}, {"type": "long",
+    "name": "dsa", "required": true}, {"type": "long", "name": "sql", "required":
+    true}, {"type": "long", "name": "projects", "required": true}, {"type": "long",
+    "name": "communication", "required": true}]'
+  outputs: '[{"type": "long", "required": true}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2026-10-20 03:06:08.829871'

@@ -2,6 +2,15 @@
 from fastapi import FastAPI
 from pydantic import BaseModel, Field
 import mlflow
+
+import os
+from pathlib import Path
+
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+DEFAULT_TRACKING_URI = "sqlite:///" + (PROJECT_ROOT / "mlflow.db").as_posix()
+mlflow.set_tracking_uri(
+    os.getenv("MLFLOW_TRACKING_URI", DEFAULT_TRACKING_URI)
+)
 import pandas as pd
 import os
 
@@ -13,7 +22,7 @@ app = FastAPI(
 
 MODEL_URI = os.getenv(
     "CAREERFORGE_MODEL_URI",
-    "models:/m-3e1921d69a874a059c2807d4b9b58813"
+    str(Path(__file__).resolve().parent / "model")
 )
 model = mlflow.pyfunc.load_model(MODEL_URI)
 
