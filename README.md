@@ -81,3 +81,5 @@ Make sure the following software is installed:
 ```bash
 git clone https://github.com/vaishu-rgb/KLH-CSE-2026-27-24CSE0024-CareerForge.git
 cd KLH-CSE-2026-27-24CSE0024-CareerForge
+
+<!-- CI verification -->
